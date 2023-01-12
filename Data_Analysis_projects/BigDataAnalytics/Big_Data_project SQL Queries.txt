@@ -1,0 +1,48 @@
+
+ALTER TABLE cars
+ADD PRIMARY KEY (sales_id)
+
+ALTER TABLE dealers
+ADD FOREIGN KEY (sales_id) REFERENCES cars(sales_id);
+
+ALTER TABLE seller
+ADD FOREIGN KEY (sales_id) REFERENCES cars(sales_id);
+
+
+1.
+SELECT car_mod, COUNT(*)
+FROM cars
+GROUP BY car_mod
+ORDER BY COUNT(*) DESC
+LIMIT 1;
+
+2.
+SELECT Dealer , COUNT(dealers.sales_id) as count, SUM(selling_price) as total_sales
+FROM dealers LEFT JOIN cars on dealers.sales_id = cars.sales_id
+GROUP BY Dealer
+ORDER BY total_sales desc;
+
+3.
+SELECT car_mod, AVG(selling_price) as average_price
+FROM cars
+GROUP BY car_mod
+ORDER BY average_price DESC;
+
+4.
+SELECT car_mod , years as release_year
+FROM cars
+WHERE years = (SELECT MAX(years) FROM cars)
+OR years = (SELECT MIN(years) FROM cars)
+ORDER BY years ASC;
+
+5.
+SELECT car_mod, selling_price, mileage
+FROM cars
+WHERE selling_price = (SELECT MIN(selling_price) FROM cars)
+OR mileage = (SELECT MIN(mileage) FROM cars)
+ORDER BY selling_price asc, mileage asc;
+
+6.
+SELECT seller_type, SUM(selling_price) as total_revenue
+FROM seller LEFT JOIN cars ON seller.sales_id = cars.sales_id
+WHERE seller_type = 'Individual';

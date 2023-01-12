@@ -1,0 +1,22 @@
+GROUP BY- used with aggregate functions.
+SUM- is a function that takes the name of a column as an argument and returns the sum of all the values in that column.
+Inner JOIN- will combine rows from different tables if the join condition is true.
+ORDER BY-  sort the result set by a particular column 
+LIMIT- specify the maximum number of rows
+MIN- returns the smallest value in that column.
+MAX- returns the largest value in that column .
+OR- filters the result set 
+
+SELECT- extracts data from a database
+UPDATE- updates data in a database
+DELETE- deletes data from a database
+INSERT INTO- inserts new data into a database
+CREATE DATABASE- creates a new database
+CREATE TABLE- creates a new table
+ALTER TABLE- modifies a table
+DROP TABLE- deletes a table
+AVG- returns the average value for a numeric column.
+As- rename a column or table using an alias.
+WHERE- filter the result set to include only rows 
+AND is an operator that combines two conditions.
+COUNT- counts the number of rows where the column is not NULL.
