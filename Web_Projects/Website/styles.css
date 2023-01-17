@@ -1,0 +1,258 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background:#222;
+    background-image: no-repeat center fixed;
+    font-size: 120%;
+    background-repeat: no-repeat;
+  }
+  .card {
+    background: #000000d0;
+    color: white;
+    padding: 2em;
+    border-radius: 30px;
+    background-size: 100%;
+    width: 100%;
+    max-width: 420px;
+    margin: 1em;
+    touch-action: none;
+    user-select: none;
+    transform: translate(0px, 0px);
+  }
+    .card-two {
+      background: #000000d0;
+      color: white;
+      padding: 2em;
+      border-radius: 30px;
+      background-size: 100%;
+      width: fit-content;
+      margin: 1em;
+      touch-action: none;
+      user-select: none;
+      transform: translate(0px, 0px);
+      display: none;
+    }
+
+    .card-three {
+      background: #000000d0;
+      color: white;
+      padding: 2em;
+      border-radius: 30px;
+      background-size: 100%;
+      width: fit-content;
+      margin: 1em;
+      touch-action: none;
+      user-select: none;
+      transform: translate(0px, 0px);
+      display: none;
+    }
+
+    .card-four {
+    background: #000000d0;
+    color: white;
+    padding-top: 2em;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 1em;
+    border-radius: 30px;
+    background-size: 100%;
+    width: 100%;
+    max-width: 420px;
+    margin: 1em;
+    touch-action: none;
+    user-select: none;
+    transform: translate(0px, 0px);
+    display: none;
+  }
+
+  .card-five {
+    background: #000000d0;
+    color: white;
+    padding: 2em;
+    border-radius: 30px;
+    background-size: 100%;
+    width: 100%;
+    max-width: 420px;
+    margin: 1em;
+    touch-action: none;
+    user-select: none;
+    transform: translate(0px, 0px);
+    display: none;
+  }
+  
+
+  .week-container {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .month-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .daily-card {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 10px;
+    font-size: 16px;
+  }
+
+  .weekly-card {
+    margin-left: 20px;
+    margin-right: 10px;
+    font-size: 9px;
+  }
+
+  .five-day {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+  }
+    .five-dayy {
+      text-align: center;
+      font-size: 30px;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+  .search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  button {
+    margin: 0.5em;
+    border-radius: 50%;
+    border: none;
+    height: 44px;
+    width: 44px;
+    outline: none;
+    background: #7c7c7c2b;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    aspect-ratio: 1/1;
+  }
+  
+  input.search-bar {
+    border: none;
+    outline: none;
+    padding: 0.4em 1em;
+    border-radius: 24px;
+    background: #7c7c7c2b;
+    color: white;
+    font-family: inherit;
+    font-size: 105%;
+    width: calc(100% - 100px);
+  }
+  
+  button:hover {
+    background: #7c7c7c6b;
+  }
+  
+  h1.temp {
+    margin: 0;
+    margin-bottom: 0.4em;
+  }
+  
+  .flex {
+    display: flex;
+    align-items: center;
+  }
+  
+  .description {
+    text-transform: capitalize;
+    margin-left: 8px;
+  }
+  
+  .weather.loading {
+    visibility: hidden;
+    max-height: 20px;
+    position: relative;
+  }
+  
+  .weather.loading:after {
+    visibility: visible;
+    content: "Loading...";
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 20px;
+  } 
+
+  .copyright {
+    margin-top: 40px;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .used {
+    margin-top: 40px;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .double {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .text-area {
+    border: none;
+      outline: none;
+      padding: 0.4em 1em;
+      border-radius: 24px;
+      background: #7c7c7c2b;
+      color: white;
+      font-family: inherit;
+      font-size: 105%;
+      width: calc(100% - 100px);
+  }
+
+  input.input-field {
+    border: none;
+    outline: none;
+    padding: 0.4em 1em;
+    border-radius: 24px;
+    background: #7c7c7c2b;
+    color: white;
+    font-family: inherit;
+    font-size: 105%;
+    width: calc(100% - 100px);
+  }
+
+  .btn.btn-submit {
+    border-style: none;
+    border-radius: 10px;
+    font-size: 105%;
+    background: #7c7c7c2b;
+    color: white;
+    padding: 0.2em 0.4em;
+  }
+
+  .btn.btn-submit:hover {
+    background: #7c7c7c6b;
+  }
+
+  .instructions {
+    margin-left: 10px;
+    font-size: 105%;
+    margin-bottom: 5px;
+  }
+
+  .submission {
+    display: flex;
+    margin-top: 20px;
+    justify-content: left;
+  }
+  
+  .row-body {
+    margin-top: 40px;
+  }

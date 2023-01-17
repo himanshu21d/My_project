@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="icon" type="image/x-icon" href="./favicon.ico"> 
+  <link rel="stylesheet" href="./styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <script src="./script.js" defer></script>
+  <script src="./interactions.js" defer></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_fGdnQy9OPCMwJPcJaOaUQHIJCpVvipU"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+  <div class="card" id="card">
+    <div class="search">
+      <input type="text" class="search-bar" placeholder="Search">
+      <button class="sButton"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1.5em"
+          width="1.5em" xmlns="http://www.w3.org/2000/svg">
+          <path class="sIcon"
+            d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0 0 11.6 0l43.6-43.5a8.2 8.2 0 0 0 0-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z">
+          </path>
+        </svg></button>
+        <button class="week">W</button>
+        <button class="month">M</button>
+    </div>
+      <h2 class="city">Weather in Berlin</h2>
+      <h1 class="temp">21°C</h1>
+      <div class="flex">
+        <img src="https://openweathermap.org/img/wn/04n.png" alt="" class="icon" />
+        <div class="description">Cloudy</div>
+      </div>
+      <div class="humidity">Humidity: 80%</div>
+      <div class="wind">Wind speed: 6.2 km/h</div>
+    </div>
+  </div>
+
+  <div class="card-two" id="card-two">
+    <div class="five-day">
+      7 Day Forecast
+    </div>
+    <div class="week-container">
+      <div class="daily-card">
+        <p class="day-one"></p>
+        <img src="https://openweathermap.org/img/wn/02d.png" class="weather-img-one">
+        <p class="max-one"></p>
+        <p class="humidity-one"></p>
+        <p class="wind-one"></p>
+      </div>
+      <hr>
+      <div class="daily-card">
+        <p class="day-two"></p>
+        <img src="https://openweathermap.org/img/wn/02d.png" class="weather-img-two">
+        <p class="max-two"></p>
+        <p class="humidity-two"></p>
+        <p class="wind-two"></p>
+      </div>
+      <hr>
+      <div class="daily-card">
+        <p class="day-three"></p>
+        <img src="https://openweathermap.org/img/wn/02d.png" class="weather-img-three">
+        <p class="max-three"></p>
+        <p class="humidity-three"></p>
+        <p class="wind-three"></p>
+      </div>
+      <hr>
+      <div class="daily-card">
+        <p class="day-four"></p>
+        <img src="https://openweathermap.org/img/wn/02d.png" class="weather-img-four">
+        <p class="max-four"></p>
+        <p class="humidity-four"></p>
+        <p class="wind-four"></p>
+      </div>
+      <hr>
+      <div class="daily-card">
+        <p class="day-five"></p>
+        <img src="https://openweathermap.org/img/wn/02d.png" class="weather-img-five">
+        <p class="max-five"></p>
+        <p class="humidity-five"></p>
+        <p class="wind-five"></p>
+      </div>
+      <hr>
+      <div class="daily-card">
+        <p class="day-six"></p>
+        <img src="https://openweathermap.org/img/wn/02d.png" class="weather-img-six">
+        <p class="max-six"></p>
+        <p class="humidity-six"></p>
+        <p class="wind-six"></p>
+      </div>
+      <hr>
+      <div class="daily-card">
+        <p class="day-seven"></p>
+        <img src="https://openweathermap.org/img/wn/02d.png" class="weather-img-seven">
+        <p class="max-seven"></p>
+        <p class="humidity-seven"></p>
+        <p class="wind-seven"></p>
+      </div>
+   </div>
+  </div>
+
+  <div class="card-three" id="card-three">
+    <div class="five-dayy">
+      1 Month Forecast
+    </div>
+    <div class="monthly-container">
+    <div class="month-container">
+      <div class="weekly-card">
+        <p class="day-one"></p>
+        <p class="date-one"></p>
+        <img src="https://openweathermap.org/img/wn/02d.png" class="weather-img-one">
+        <p class="max-one"></p>
+        <p class="humidity-one"></p>
+        <p class="wind-one"></p>
+      </div>
+      <hr>
+      <div class="weekly-card">
+        <p class="day-two"></p>
+        <p class="date-two"></p>
+        <img src="https://openweathermap.org/img/wn/02d.png" class="weather-img-two">
+        <p class="max-two"></p>
+        <p class="humidity-two"></p>
+        <p class="wind-two"></p>
+      </div>
+      <hr>
+      <div class="weekly-card">
+        <p class="day-three"></p>
+        <p class="date-three"></p>
+        <img src="https://openweathermap.org/img/wn/02d.png" class="weather-img-three">
+        <p class="max-three"></p>
+        <p class="humidity-three"></p>
+        <p class="wind-three"></p>
+      </div>
+      <hr>
+      <div class="weekly-card">
+        <p class="day-four"></p>
+        <p class="date-four"></p>
+        <img src="https://openweathermap.org/img/wn/02d.png" class="weather-img-four">
+        <p class="max-four"></p>
+        <p class="humidity-four"></p>
+        <p class="wind-four"></p>
+      </div>
+      <hr>
+      <div class="weekly-card">
+        <p class="day-five"></p>
+        <p class="date-five"></p>
+        <img src="https://openweathermap.org/img/wn/02d.png" class="weather-img-five">
+        <p class="max-five"></p>
+        <p class="humidity-five"></p>
+        <p class="wind-five"></p>
+      </div>
+      <hr>
+      <div class="weekly-card">
+        <p class="day-six"></p>
+        <p class="date-six"></p>
+        <img src="https://openweathermap.org/img/wn/02d.png" class="weather-img-six">
+        <p class="max-six"></p>
+        <p class="humidity-six"></p>
+        <p class="wind-six"></p>
+      </div>
+      <hr>
+      <div class="weekly-card">
+        <p class="day-seven"></p>
+        <p class="date-seven"></p>
+        <img src="https://openweathermap.org/img/wn/02d.png" class="weather-img-seven">
+        <p class="max-seven"></p>
+        <p class="humidity-seven"></p>
+        <p class="wind-seven"></p>
+      </div>
+    </div>
+    <div class="month-container">
+      <div class="weekly-card">
+        <p class="day-eight"></p>
+        <p class="date-eight"></p>
+        <img src="https://openweathermap.org/img/wn/02d.png" class="weather-img-eight">
+        <p class="max-eight"></p>
+        <p class="humidity-eight"></p>
+        <p class="wind-eight"></p>
+      </div>
+      <hr>
+      <div class="weekly-card">
+        <p class="day-nine"></p>
+        <p class="date-nine"></p>
+        <img src="https://openweathermap.org/img/wn/02d.png" class="weather-img-nine">
+        <p class="max-nine"></p>
+        <p class="humidity-nine"></p>
+        <p class="wind-nine"></p>
+      </div>
+      <hr>
+      <div class="weekly-card">
+        <p class="day-ten"></p>
+        <p class="date-ten"></p>
+        <img src="https://openweathermap.org/img/wn/02d.png" class="weather-img-ten">
+        <p class="max-ten"></p>
+        <p class="humidity-ten"></p>
+        <p class="wind-ten"></p>
+      </div>
+      <hr>
+      <div class="weekly-card">
+        <p class="day-eleven"></p>
+        <p class="date-eleven"></p>
+        <img src="https://openweathermap.org/img/wn/02d.png" class="weather-img-eleven">
+        <p class="max-eleven"></p>
+        <p class="humidity-eleven"></p>
+        <p class="wind-eleven"></p>
+      </div>
+      <hr>
+      <div class="weekly-card">
+        <p class="day-twelve"></p>
+        <p class="date-twelve"></p>
+        <img src="https://openweathermap.org/img/wn/02d.png" class="weather-img-twelve">
+        <p class="max-twelve"></p>
+        <p class="humidity-twelve"></p>
+        <p class="wind-twelve"></p>
+      </div>
+      <hr>
+      <div class="weekly-card">
+        <p class="day-thirteen"></p>
+        <p class="date-thirteen"></p>
+        <img src="https://openweathermap.org/img/wn/02d.png" class="weather-img-thirteen">
+        <p class="max-thirteen"></p>
+        <p class="humidity-thirteen"></p>
+        <p class="wind-thirteen"></p>
+      </div>
+      <hr>
+      <div class="weekly-card">
+        <p class="day-fourteen"></p>
+        <p class="date-fourteen"></p>
+        <img src="https://openweathermap.org/img/wn/02d.png" class="weather-img-fourteen">
+        <p class="max-fourteen"></p>
+        <p class="humidity-fourteen"></p>
+        <p class="wind-fourteen"></p>
+      </div>
+    </div>
+    <div class="month-container">
+      <div class="weekly-card">
+        <p class="day-fifteen"></p>
+        <p class="date-fifteen"></p>
+        <img src="https://openweathermap.org/img/wn/02d.png" class="weather-img-fifteen">
+        <p class="max-fifteen"></p>
+        <p class="humidity-fifteen"></p>
+        <p class="wind-fifteen"></p>
+      </div>
+      <hr>
+      <div class="weekly-card">
+        <p class="day-sixteen"></p>
+        <p class="date-sixteen"></p>
+        <img src="https://openweathermap.org/img/wn/02d.png" class="weather-img-sixteen">
+        <p class="max-sixteen"></p>
+        <p class="humidity-sixteen"></p>
+        <p class="wind-sixteen"></p>
+      </div>
+      <hr>
+      <div class="weekly-card">
+        <p class="day-seventeen"></p>
+        <p class="date-seventeen"></p>
+        <img src="https://openweathermap.org/img/wn/02d.png" class="weather-img-seventeen">
+        <p class="max-seventeen"></p>
+        <p class="humidity-seventeen"></p>
+        <p class="wind-seventeen"></p>
+      </div>
+      <hr>
+      <div class="weekly-card">
+        <p class="day-eighteen"></p>
+        <p class="date-eighteen"></p>
+        <img src="https://openweathermap.org/img/wn/02d.png" class="weather-img-eighteen">
+        <p class="max-eighteen"></p>
+        <p class="humidity-eighteen"></p>
+        <p class="wind-eighteen"></p>
+      </div>
+      <hr>
+      <div class="weekly-card">
+        <p class="day-nineteen"></p>
+        <p class="date-nineteen"></p>
+        <img src="https://openweathermap.org/img/wn/02d.png" class="weather-img-nineteen">
+        <p class="max-nineteen"></p>
+        <p class="humidity-nineteen"></p>
+        <p class="wind-nineteen"></p>
+      </div>
+      <hr>
+      <div class="weekly-card">
+        <p class="day-twenty"></p>
+        <p class="date-twenty"></p>
+        <img src="https://openweathermap.org/img/wn/02d.png" class="weather-img-twenty">
+        <p class="max-twenty"></p>
+        <p class="humidity-twenty"></p>
+        <p class="wind-twenty"></p>
+      </div>
+      <hr>
+      <div class="weekly-card">
+        <p class="day-twentyone"></p>
+        <p class="date-twentyone"></p>
+        <img src="https://openweathermap.org/img/wn/02d.png" class="weather-img-twentyone">
+        <p class="max-twentyone"></p>
+        <p class="humidity-twentyone"></p>
+        <p class="wind-twentyone"></p>
+      </div>
+    </div>
+    <div class="month-container">
+      <div class="weekly-card">
+        <p class="day-twentytwo"></p>
+        <p class="date-twentytwo"></p>
+        <img src="https://openweathermap.org/img/wn/02d.png" class="weather-img-twentytwo">
+        <p class="max-twentytwo"></p>
+        <p class="humidity-twentytwo"></p>
+        <p class="wind-twentytwo"></p>
+      </div>
+      <hr>
+      <div class="weekly-card">
+        <p class="day-twentythree"></p>
+        <p class="date-twentythree"></p>
+        <img src="https://openweathermap.org/img/wn/02d.png" class="weather-img-twentythree">
+        <p class="max-twentythree"></p>
+        <p class="humidity-twentythree"></p>
+        <p class="wind-twentythree"></p>
+      </div>
+      <hr>
+      <div class="weekly-card">
+        <p class="day-twentyfour"></p>
+        <p class="date-twentyfour"></p>
+        <img src="https://openweathermap.org/img/wn/02d.png" class="weather-img-twentyfour">
+        <p class="max-twentyfour"></p>
+        <p class="humidity-twentyfour"></p>
+        <p class="wind-twentyfour"></p>
+      </div>
+      <hr>
+      <div class="weekly-card">
+        <p class="day-twentyfive"></p>
+        <p class="date-twentyfive"></p>
+        <img src="https://openweathermap.org/img/wn/02d.png" class="weather-img-twentyfive">
+        <p class="max-twentyfive"></p>
+        <p class="humidity-twentyfive"></p>
+        <p class="wind-twentyfive"></p>
+      </div>
+      <hr>
+      <div class="weekly-card">
+        <p class="day-twentysix"></p>
+        <p class="date-twentysix"></p>
+        <img src="https://openweathermap.org/img/wn/02d.png" class="weather-img-twentysix">
+        <p class="max-twentysix"></p>
+        <p class="humidity-twentysix"></p>
+        <p class="wind-twentysix"></p>
+      </div>
+      <hr>
+      <div class="weekly-card">
+        <p class="day-twentyseven"></p>
+        <p class="date-twentyseven"></p>
+        <img src="https://openweathermap.org/img/wn/02d.png" class="weather-img-twentyseven">
+        <p class="max-twentyseven"></p>
+        <p class="humidity-twentyseven"></p>
+        <p class="wind-twentyseven"></p>
+      </div>
+      <hr>
+      <div class="weekly-card">
+        <p class="day-twentyeight"></p>
+        <p class="date-twentyeight"></p>
+        <img src="https://openweathermap.org/img/wn/02d.png" class="weather-img-twentyeight">
+        <p class="max-twentyeight"></p>
+        <p class="humidity-twentyeight"></p>
+        <p class="wind-twentyeight"></p>
+      </div>
+    </div>
+    </div>
+    </div>
+
+      <div class="card-four" id="card-four">
+        <div class="five-day">About This Website</div>
+        <p class="used">Made with: HTML, CSS, Javascript, jQuery.</p>
+        <p class="double">Double click again to contact.</p>
+        <p class="copyright">Group 5</p>
+      </div>
+      
+      <div class="card-five" id="card-five">
+        <div class="five-day">Contact Me</div>
+        <div class="row-body">
+          <form action="#">
+            <p>
+              <input type="text" class="input-field" name="first_name" placeholder="First name" id="first_name"/>
+            </p>
+            <p>
+              <input type="text" class="input-field" name="last_name" placeholder="Last name" id="last_name"/>
+            </p>
+            <p>
+              <input type="email" class="input-field" name="email" placeholder="john.smith@gmail.com" id="email"/>
+            </p>
+            <textarea cols="46" rows="3" name="comments" placeholder="Type your message here." class="text-area" id="message"></textarea>
+            <div class="submission" onclick="saveFile()">
+              <input class="btn btn-submit" type="submit" value="Submit" />
+              <small class="instructions">or press enter</small>
+            </div>
+          </form>
+        </div>
+      </div>
+</body>
+</html> 
